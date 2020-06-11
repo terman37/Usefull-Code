@@ -1,5 +1,35 @@
 ## Jupyter Lab
 
+### proxy
+
+- create .condarc
+
+```
+conda config
+```
+
+- set
+
+```
+conda config --set proxy_servers.https https://address:port
+```
+
+- or add in .condarc in %USERPROFILE%
+
+```
+channels:
+  - defaults
+
+show_channel_urls: true
+allow_other_channels: true
+
+# proxy_servers:
+#  http: http://proxy-tech.svc.ext.tdc
+#  https: http://proxy-tech.svc.ext.tdc
+
+ssl_verify: false
+```
+
 ### venv
 
   - create
@@ -15,7 +45,6 @@
   
   ```
 
-  
 
 ### kernel
 
@@ -40,15 +69,31 @@
   jupyter notebook –generate-config
   ```
 
-- uncomment / modify in %user%/.jupyter/jupyter_notebook_config.py
+- uncomment / modify in %USERPROFILE%/.jupyter/jupyter_notebook_config.py
 
   ```
   #c.NotebookApp.notebook_dir = ''
   ```
 
-  
+### default web browser
+
+- modifiy jupyter_notebook_config.py
+
+  ```
+  c.NotebookApp.browser = 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
+  ```
 
 ## GIT
+
+### gitignore global
+
+- run
+
+  ```
+  git config --global core.excludesfile %USERPROFILE%\.gitignore
+  ```
+
+- edit file %USERPROFILE%/.gitignore
 
 ### proxy
 
@@ -70,3 +115,26 @@
   # To remove the config
   git config --global --unset http.proxy
   ```
+
+
+
+## Python
+
+### Defaults packages
+
+```
+pip install matplotlib
+pip install pandas
+pip install scipy
+pip install scikit-learn
+
+```
+
+## Pentaho
+
+change JVM memory in spoon.bat
+
+```
+if "%PENTAHO_DI_JAVA_OPTIONS%"=="" set PENTAHO_DI_JAVA_OPTIONS="-Xms1024m" "-Xmx4096m" "-XX:MaxPermSize=256m"
+```
+
