@@ -58,7 +58,7 @@ ssl_verify: false
 
   ```
   conda install ipykernel
-  ipython kernel install --name 'env_name' --user
+  python -m ipykernel install --user --name <env_name> --display-name "<Python 3.7 (env_name)>"
   ```
 
 ### defaut folder
