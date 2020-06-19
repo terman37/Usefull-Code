@@ -1,3 +1,43 @@
+## Environments
+
+### conda
+
+  - create
+
+    ```
+    conda create -n env_name python=3.7
+    ```
+
+- manage
+
+  ```
+  conda env list
+  ```
+
+### venv
+
+- Create
+
+  ```
+  python -m venv path_to_venv
+  ```
+
+- activate
+
+  - win
+
+    ```
+    path_to_venv\scipts\activate.bat
+    ```
+
+  - linux
+
+    ```
+    source path_to_venv/bin/activate
+    ```
+
+
+
 ## Jupyter Lab
 
 ### proxy
@@ -30,35 +70,46 @@ allow_other_channels: true
 ssl_verify: false
 ```
 
-### venv
+### Install
 
-  - create
-
-    ```
-    conda create -n env_name python=3.7
-    ```
-
-- manage
-
-  ```
-  conda env list
-  
-  ```
-
-
-### kernel
-
-- dans base
+- conda
 
   ```
   conda install -c conda-forge jupyterlab
   ```
 
-- dans venv
+- pip
+
+  ```
+  pip install jupyter-lab
+  ```
+
+### Kernel
+
+- conda
 
   ```
   conda install ipykernel
-  python -m ipykernel install --user --name <env_name> --display-name "<Python 3.7 (env_name)>"
+  python -m ipykernel install --user --name=myenv
+  ```
+
+- dans venv
+
+  ```
+  pip install ipykernel ( or pip install --user ipykernel)
+  python -m ipykernel install --user --name=myenv
+  ```
+
+- kernel list
+
+  ```
+  jupyter kernelspec list
+  ```
+
+- uninstall
+
+  ```
+  jupyter kernelspec uninstall myenv
   ```
 
 ### defaut folder
@@ -83,17 +134,23 @@ ssl_verify: false
   c.NotebookApp.browser = 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
   ```
 
+
+
 ## GIT
 
 ### gitignore global
 
+- create file
+
+  %USERPROFILE%/.gitignore_global
+  
 - run
 
   ```
-  git config --global core.excludesfile %USERPROFILE%\.gitignore
+  git config --global core.excludesfile %USERPROFILE%\.gitignore_global
   ```
 
-- edit file %USERPROFILE%/.gitignore
+- edit file %USERPROFILE%/.gitignore_global
 
 ### proxy
 
