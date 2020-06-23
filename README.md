@@ -158,10 +158,10 @@ ssl_verify: false
 - run
 
   ```
-  git config --global core.excludesfile %USERPROFILE%\.gitignore_global
+  git config --global core.excludesfile C:/users/ajourdan/.gitignore_global
   ```
 
-- edit file %USERPROFILE%/.gitignore_global
+- edit the file .gitignore_global
 
 ### proxy
 
