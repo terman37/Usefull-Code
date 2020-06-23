@@ -1,5 +1,16 @@
 ## Environments
 
+### pip
+
+- install / upgrade
+
+  ```bash
+  sudo apt install python-pip
+  sudo apt install python3.7-venv
+  
+  python -m pip install --upgrade pip
+  ```
+
 ### conda
 
   - create
@@ -171,6 +182,58 @@ ssl_verify: false
   ```
   # To remove the config
   git config --global --unset http.proxy
+  ```
+
+## Docker
+
+### Build / run
+
+- from Dockerfile directory run: (**do not forget the dot at the end**)
+
+  ```bash
+  docker build --tag myappimage:v0 .
+  ```
+
+- Check images installed
+
+  ```bash
+  docker images
+  ```
+
+- Run it: (bind port 80 to 8000 in container)
+
+  ```bash
+  docker run -d -p 80:8000 myappimage:v0
+  ```
+
+- clean docker images/volumes... (all but the ones running)
+
+  ```
+  docker system prune -a
+  ```
+
+
+### Docker File
+
+- Example
+
+  ```dockerfile
+  # with slim buster 371 Mo :-)
+  FROM python:3.7.7-slim-buster
+  
+  # Working directory in image
+  WORKDIR /My_API
+  # Copy from local current dir to image workdir
+  COPY . .
+  # Change workdir (relative)
+  WORKDIR flask_app
+  # Run install of PIP modules
+  RUN pip install --no-cache-dir -r requirements.txt
+  # Open port
+  EXPOSE 8000
+  
+  # Cmd to be run at startup
+  CMD ["gunicorn", "-c", "gunicorn.conf.py", "wsgi:server"]
   ```
 
 
