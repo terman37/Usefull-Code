@@ -145,8 +145,6 @@ ssl_verify: false
   c.NotebookApp.browser = 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
   ```
 
-
-
 ## GIT
 
 ### gitignore global
