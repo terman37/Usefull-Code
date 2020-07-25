@@ -276,3 +276,10 @@ make it executable
 sudo chmod +x /etc/rc.local
 ```
 
+## Install jdk on ubuntu
+
+```bash
+sudo apt install default-jre
+sudo apt install default-jdk
+```
+
