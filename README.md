@@ -1,11 +1,17 @@
 ## Environments
 
+### python utils
+
+```
+sudo apt-get install build-essential libssl-dev libffi-dev python-dev
+```
+
 ### pip
 
 - install / upgrade
 
   ```bash
-  sudo apt install python-pip
+  sudo apt install python3-pip
   sudo apt install python3.7-venv
   
   python -m pip install --upgrade pip
