@@ -256,3 +256,23 @@ change JVM memory in spoon.bat
 if "%PENTAHO_DI_JAVA_OPTIONS%"=="" set PENTAHO_DI_JAVA_OPTIONS="-Xms1024m" "-Xmx4096m" "-XX:MaxPermSize=256m"
 ```
 
+## Run bash script at startup
+
+create a file /etc/rc.local
+
+place script in it: (example fix sound issue on ux534ft)
+
+```bash
+#!/bin/bash
+
+hda-verb /dev/snd/hwC0D0 0x20 0x500 0xf
+hda-verb /dev/snd/hwC0D0 0x20 0x477 0x74
+exit 0
+```
+
+make it executable
+
+```bash
+sudo chmod +x /etc/rc.local
+```
+
