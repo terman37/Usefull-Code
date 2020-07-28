@@ -1,10 +1,42 @@
+## Python
+
+### Linux - Python specific version
+
+- download from python Gzipped tarball https://www.python.org/downloads/source/ or 
+
+  ```bash
+  wget https://www.python.org/ftp/python/3.7.8/Python-3.7.8.tgz
+  ```
+
+- uncompress
+
+  ```bash
+  sudo tar xzf Python-3.7.8.tgz
+  ```
+
+- compile (make alt install to keep existing configsudo)
+
+  ```bash
+  cd /usr/src
+  cd Python-3.7.8
+  sudosudo ./configure --enable-optimizations
+  sudo make altinstall
+  ```
+
+- check
+
+  ```bash
+  python3.7 -V
+  ```
+
+- check install path
+
+  ```bash
+  which python3
+  which python3.7
+  ```
+
 ## Environments
-
-### python utils
-
-```
-sudo apt-get install build-essential libssl-dev libffi-dev python-dev
-```
 
 ### pip
 
@@ -12,22 +44,22 @@ sudo apt-get install build-essential libssl-dev libffi-dev python-dev
 
   ```bash
   sudo apt install python3-pip
-  sudo apt install python3.7-venv
+  sudo apt install python3-venv
   
-  python -m pip install --upgrade pip
+  python3 -m pip install --upgrade pip
   ```
 
 ### Conda
 
   - create
 
-    ```
+    ```bash
     conda create -n env_name python=3.7
     ```
 
 - manage
 
-  ```
+  ```bash
   conda env list
   ```
 
@@ -35,25 +67,29 @@ sudo apt-get install build-essential libssl-dev libffi-dev python-dev
 
 - Create
 
-  ```
-  python -m venv path_to_venv
+  ```bash
+  python3 -m venv path_to_venv
   ```
 
 - activate
 
   - win
 
-    ```
+    ```bash
     path_to_venv\scipts\activate.bat
     ```
 
   - linux
 
-    ```
+    ```bash
     source path_to_venv/bin/activate
     ```
 
+- desactivate
 
+  ```bash
+  deactivate
+  ```
 
 ## Jupyter Lab
 
