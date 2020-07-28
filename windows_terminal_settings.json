@@ -36,45 +36,45 @@
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
                 "name": "Invite de commandes",
                 "commandline": "cmd.exe",
-		"startingDirectory" : "C:/MY_DATAS/",
+		        "startingDirectory" : "C:/MY_DATAS/",
                 "hidden": false
             },
-	    {
-                // Lab37
+	        {
+                // Python venv Lab37
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa9859}",
                 "name": "Lab37",
-		"icon" : "C:/MY_SOFTS/DEV/PYTHON/Python377/DLLs/pyc.ico",
+		        "icon" : "C:/MY_SOFTS/DEV/PYTHON/Python377/DLLs/pyc.ico",
                 "commandline": "cmd.exe /K C:/MY_DATAS/MyGIT/venvs/Lab37/Scripts/Activate.bat",
-		"startingDirectory" : "C:/MY_DATAS/",
+		        "startingDirectory" : "C:/MY_DATAS/",
                 "hidden": false
             },
-	    {
-		// Git BASH
-        	"guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa9858}",
-        	"acrylicOpacity" : 0.75,
-        	"closeOnExit" : true,
-        	"colorScheme" : "Campbell",
-       	 	"commandline" : "C:/MY_SOFTS/DEV/GIT/Git/bin/bash.exe -i -l",
-        	"cursorColor" : "#FFFFFF",
-        	"cursorShape" : "bar",
-        	"fontFace" : "Consolas",
-        	"fontSize" : 10,
-        	"historySize" : 9001,
-        	"icon" : "C:/MY_SOFTS/DEV/GIT/Git/mingw64/share/git/git-for-windows.ico",
-        	"name" : "GIT Bash",
-        	"padding" : "0, 0, 0, 0",
-        	"snapOnInput" : true,
-        	"startingDirectory" : "%USERPROFILE%",
-        	"useAcrylic" : true
-    	    },
+    	    {
+    		    // Git BASH
+            	"guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa9858}",
+            	"acrylicOpacity" : 0.75,
+            	"closeOnExit" : true,
+            	"colorScheme" : "Campbell",
+           	 	"commandline" : "C:/MY_SOFTS/DEV/GIT/Git/bin/bash.exe -i -l",
+            	"cursorColor" : "#FFFFFF",
+            	"cursorShape" : "bar",
+            	"fontFace" : "Consolas",
+            	"fontSize" : 10,
+            	"historySize" : 9001,
+            	"icon" : "C:/MY_SOFTS/DEV/GIT/Git/mingw64/share/git/git-for-windows.ico",
+            	"name" : "GIT Bash",
+            	"padding" : "0, 0, 0, 0",
+            	"snapOnInput" : true,
+            	"startingDirectory" : "%USERPROFILE%",
+            	"useAcrylic" : true
+        	},
             {
-		// WSL Ubuntu
+		        // WSL Ubuntu
                 "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
                 "hidden": false,
                 "name": "Ubuntu",
                 "source": "Windows.Terminal.Wsl"
             },
-	    {
+    	    {
                 // Make changes here to the powershell.exe profile.
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
                 "name": "Windows PowerShell",

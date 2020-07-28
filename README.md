@@ -17,7 +17,7 @@ sudo apt-get install build-essential libssl-dev libffi-dev python-dev
   python -m pip install --upgrade pip
   ```
 
-### conda
+### Conda
 
   - create
 
@@ -81,8 +81,8 @@ show_channel_urls: true
 allow_other_channels: true
 
 # proxy_servers:
-#  http: http://proxy-tech.svc.ext.tdc
-#  https: http://proxy-tech.svc.ext.tdc
+http: https://address:port
+https: https://address:port
 
 ssl_verify: false
 ```
@@ -107,13 +107,17 @@ ssl_verify: false
 
   ```
   conda install ipykernel
-  python -m ipykernel install --user --name=myenv
   ```
-
-- dans venv
+  
+- pip
 
   ```
-  pip install ipykernel ( or pip install --user ipykernel)
+  pip install ipykernel
+  ```
+  
+- add kernel
+
+  ```
   python -m ipykernel install --user --name=myenv
   ```
 
@@ -188,6 +192,70 @@ ssl_verify: false
   git config --global --unset http.proxy
   ```
 
+### Python script to clone private repo
+
+- can be used to run private repo from collab for example
+
+  ```python
+  import os
+  from getpass import getpass
+  import urllib
+  
+  user = 'user'
+  password = getpass('Password: ')
+  password = urllib.parse.quote(password) # your password is converted into url format
+  repo_name = 'repo name'
+  
+  cmd_string = 'git clone https://{0}:{1}@github.com/{0}/{2}.git'.format(user, password, repo_name)
+  
+  os.system(cmd_string)
+  cmd_string, password = "", "" # removing the password from the variable
+  ```
+
+
+
+## Packaging
+
+### install / check
+
+```
+pip install setuptools wheel
+python -m pip install --user --upgrade setuptools wheel
+```
+
+### Folder structure
+
+<img src="folder_structure.png" alt="folder_structure" style="zoom: 80%;" />
+
+### Setup.py example
+
+```python
+import setuptools
+
+setuptools.setup(
+    name="ML00",
+    version="0.0.6",
+    author="AJO",
+    packages=setuptools.find_packages(),
+    python_requires='>=3.7',
+    install_requires=['numpy >= 1.18']
+)
+```
+
+### To build
+
+- Wheel
+
+  ```
+  python setup.py bdist_wheel
+  ```
+
+- direct install (from setup.py folder)
+
+  ```
+  pip install .
+  ```
+
 ## Docker
 
 ### Build / run
@@ -246,12 +314,11 @@ ssl_verify: false
 
 ### Defaults packages
 
-```
+```bash
 pip install matplotlib
 pip install pandas
 pip install scipy
 pip install scikit-learn
-
 ```
 
 ## Pentaho
@@ -262,7 +329,9 @@ change JVM memory in spoon.bat
 if "%PENTAHO_DI_JAVA_OPTIONS%"=="" set PENTAHO_DI_JAVA_OPTIONS="-Xms1024m" "-Xmx4096m" "-XX:MaxPermSize=256m"
 ```
 
-## Run bash script at startup
+## Other Linux
+
+### Run bash script at startup
 
 create a file /etc/rc.local
 
@@ -282,10 +351,15 @@ make it executable
 sudo chmod +x /etc/rc.local
 ```
 
-## Install jdk on ubuntu
+### Install jdk on ubuntu
 
 ```bash
 sudo apt install default-jre
 sudo apt install default-jdk
 ```
 
+## Other Windows
+
+### Windows terminal
+
+- modify **windows_terminal_settings.json** (check file with enabled cmd / cmd in venv / bash / wsl )
