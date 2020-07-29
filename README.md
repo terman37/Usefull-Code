@@ -371,13 +371,13 @@ if "%PENTAHO_DI_JAVA_OPTIONS%"=="" set PENTAHO_DI_JAVA_OPTIONS="-Xms1024m" "-Xmx
 
 create a file /etc/rc.local
 
-place script in it: (example fix sound issue on ux534ft)
+place script in it:
 
 ```bash
 #!/bin/bash
 
-hda-verb /dev/snd/hwC0D0 0x20 0x500 0xf
-hda-verb /dev/snd/hwC0D0 0x20 0x477 0x74
+echo "hello world"
+
 exit 0
 ```
 
