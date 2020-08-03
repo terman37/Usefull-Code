@@ -97,19 +97,19 @@
 
 - create .condarc
 
-```
+```bash
 conda config
 ```
 
 - set
 
-```
+```bash
 conda config --set proxy_servers.https https://address:port
 ```
 
 - or add in .condarc in %USERPROFILE%
 
-```
+```bash
 channels:
   - defaults
 
@@ -348,19 +348,19 @@ setuptools.setup(
 
 - get namespaces in cluster
 
-  ```
+  ```bash
   kubectl get namespaces
   ```
 
 - get pods from namespace
 
-  ```
+  ```bash
   kubectl -n <namespace> get pods
   ```
 
 - describe pod
 
-  ```
+  ```bash
   kubectl -n <namespace> describe pod <podname>
   ```
 
@@ -417,9 +417,7 @@ place script in it:
 
 ```bash
 #!/bin/bash
-
 echo "hello world"
-
 exit 0
 ```
 
