@@ -1,0 +1,51 @@
+{
+    "terminal.integrated.shell.windows": "C:\\windows\\System32\\cmd.exe",
+    "workbench.statusBar.visible": true,
+    "git.autofetch": true,
+    "python.pythonPath": "c:\\MY_DATAS\\MyGIT\\venvs\\fastapi_test\\Scripts\\python.exe",
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": true,
+    "python.linting.enabled": true,
+    "python.linting.flake8Args": [
+        "--max-line-length=120"
+    ],
+    "launch": {
+        "configurations": [
+        {
+            "name": "Python : Fichier actuel",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            // "console": "integratedTerminal"
+            "console": "integratedTerminal",
+            "env": {"LOG_LEVEL":"INFO",
+                    "SERVER_ADDRESS":"0.0.0.0",
+                    "SERVER_PORT":"8080"},
+            "cwd": "${workspaceFolder}/app"
+        }
+    ],
+        "compounds": []
+    },
+    "workbench.colorCustomizations": {
+        "terminal.background":"#090300",
+        "terminal.foreground":"#d4d4d4",
+        "terminalCursor.background":"#A5A2A2",
+        "terminalCursor.foreground":"#A5A2A2",
+        "terminal.ansiBlack":"#090300",
+        "terminal.ansiBlue":"#01A0E4",
+        "terminal.ansiBrightBlack":"#5C5855",
+        "terminal.ansiBrightBlue":"#01A0E4",
+        "terminal.ansiBrightCyan":"#B5E4F4",
+        "terminal.ansiBrightGreen":"#01A252",
+        "terminal.ansiBrightMagenta":"#A16A94",
+        "terminal.ansiBrightRed":"#DB2D20",
+        "terminal.ansiBrightWhite":"#F7F7F7",
+        "terminal.ansiBrightYellow":"#FDED02",
+        "terminal.ansiCyan":"#B5E4F4",
+        "terminal.ansiGreen":"#01A252",
+        "terminal.ansiMagenta":"#A16A94",
+        "terminal.ansiRed":"#DB2D20",
+        "terminal.ansiWhite":"#A5A2A2",
+        "terminal.ansiYellow":"#FDED02"
+    },
+}
