@@ -358,10 +358,31 @@ setuptools.setup(
   kubectl -n <namespace> get pods
   ```
 
+- describe pod
+
+  ```
+  kubectl -n <namespace> describe pod <podname>
+  ```
+
 - check pod log
 
   ```
   kubectl -n <namespace> logs <podname>
+  ```
+
+- delete pods and services (sur namespaces it et dev)
+
+  ```
+  kubectl -n <namespace> get svc
+  kubectl -n <namespace> delete service <service_name>
+  kubectl -n <namespace> get deploy
+  kubectl -n <namespace> delete deploy <deploy_name>
+  ```
+
+- run bash
+
+  ```
+  kubectl -n <namespace> exec <podname> -it /bin/bash
   ```
 
   
