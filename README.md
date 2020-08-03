@@ -147,6 +147,20 @@ ssl_verify: false
 
 ## GIT
 
+### install
+
+```bash
+sudo apt install git-all
+```
+
+### config
+
+```bash
+git config --global user.name "My Name"
+git config --global user.email My@email
+git config --list
+```
+
 ### gitignore global
 
 - create file
@@ -155,7 +169,7 @@ ssl_verify: false
   
 - run
 
-  ```
+  ```bash
   git config --global core.excludesfile C:/users/ajourdan/.gitignore_global
   ```
 
