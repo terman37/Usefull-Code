@@ -344,18 +344,39 @@ setuptools.setup(
   CMD ["gunicorn", "-c", "gunicorn.conf.py", "wsgi:server"]
   ```
 
+## Kubectl
 
+- get namespaces in cluster
 
-## Python
+  ```
+  kubectl get namespaces
+  ```
 
-### Defaults packages
+- get pods from namespace
 
-```bash
-pip install matplotlib
-pip install pandas
-pip install scipy
-pip install scikit-learn
-```
+  ```
+  kubectl -n <namespace> get pods
+  ```
+
+- check pod log
+
+  ```
+  kubectl -n <namespace> logs <podname>
+  ```
+
+  
+
+## IDE
+
+### VsCode
+
+- default settings in 
+
+  ```
+  C:\Users\<user>\AppData\Roaming\Code\User
+  ```
+
+- copy settings.json 
 
 ## Pentaho
 
