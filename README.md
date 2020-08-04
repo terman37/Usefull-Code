@@ -385,7 +385,19 @@ setuptools.setup(
   kubectl -n <namespace> exec <podname> -it /bin/bash
   ```
 
-  
+- get ingress
+
+  ```
+  kubectl -n <namespace> get ingress
+  ```
+
+  - show yaml
+
+    ```
+    kubectl -n <namespace> get ingress <ingress_name> -o yaml
+    ```
+
+  - get host, path and port from screen, then connect to host/path:serviceport
 
 ## IDE
 
