@@ -431,6 +431,17 @@ setuptools.setup(
 
 - copy vscode_settings.json content
 
+#### Extensions
+
+- Python (Microsoft)
+- Python Indent (Kevin Rose)
+- Python Docstring Generator (Nils Werner)
+- Better Comments (Aaron Bond)
+- Python Type Hint (njqdev)
+- Remote development: SSH, containers, WSL (Microsoft)
+- Docker (Microsoft)
+- Ressource monitor (Mutantdino)
+
 ## Pentaho
 
 change JVM memory in spoon.bat
