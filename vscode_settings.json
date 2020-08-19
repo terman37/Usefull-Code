@@ -1,23 +1,24 @@
 {
     "terminal.integrated.shell.windows": "C:\\windows\\System32\\cmd.exe",
-    "workbench.statusBar.visible": true,
     "git.autofetch": true,
-    // "python.pythonPath": "c:\\MY_DATAS\\MyGIT\\venvs\\fastapi_test\\Scripts\\python.exe",
-    "python.linting.pylintEnabled": false,
     "python.linting.flake8Enabled": true,
     "python.linting.enabled": true,
     "python.linting.flake8Args": [
         "--max-line-length=120"
     ],
+    "python.globalModuleInstallation": true,
+    "python.dataScience.sendSelectionToInteractiveWindow": false,
+    "python.dataScience.alwaysTrustNotebooks": true,
     "launch": {
         "configurations": [
         {
-            "name": "Python : Fichier actuel",
+            "name": "Python : Debug CGDM",
             "type": "python",
             "request": "launch",
             "program": "${file}",
             "console": "integratedTerminal",
-            "env": {"LOG_LEVEL":"INFO",
+            // "console": "externalTerminal",
+            "env": {"LOG_LEVEL":"DEBUG",
                     "SERVER_ADDRESS":"0.0.0.0",
                     "SERVER_PORT":"8080",
                     "HOSTNAME":"local",
@@ -28,6 +29,8 @@
     ],
         "compounds": []
     },
+    "workbench.statusBar.visible": true,
+    "workbench.startupEditor": "newUntitledFile",
     "workbench.colorCustomizations": {
         "terminal.background":"#090300",
         "terminal.foreground":"#d4d4d4",
@@ -50,7 +53,4 @@
         "terminal.ansiWhite":"#A5A2A2",
         "terminal.ansiYellow":"#FDED02"
     },
-    "python.dataScience.sendSelectionToInteractiveWindow": false,
-    "python.dataScience.alwaysTrustNotebooks": true,
-    "workbench.startupEditor": "newUntitledFile",
 }
