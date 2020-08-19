@@ -2,7 +2,7 @@
     "terminal.integrated.shell.windows": "C:\\windows\\System32\\cmd.exe",
     "workbench.statusBar.visible": true,
     "git.autofetch": true,
-    "python.pythonPath": "c:\\MY_DATAS\\MyGIT\\venvs\\fastapi_test\\Scripts\\python.exe",
+    // "python.pythonPath": "c:\\MY_DATAS\\MyGIT\\venvs\\fastapi_test\\Scripts\\python.exe",
     "python.linting.pylintEnabled": false,
     "python.linting.flake8Enabled": true,
     "python.linting.enabled": true,
@@ -16,11 +16,13 @@
             "type": "python",
             "request": "launch",
             "program": "${file}",
-            // "console": "integratedTerminal"
             "console": "integratedTerminal",
             "env": {"LOG_LEVEL":"INFO",
                     "SERVER_ADDRESS":"0.0.0.0",
-                    "SERVER_PORT":"8080"},
+                    "SERVER_PORT":"8080",
+                    "HOSTNAME":"local",
+                    "VERSION_SERVER":"0.1",
+                    "CI_COVERAGE_ENABLED":"false"},
             "cwd": "${workspaceFolder}/app"
         }
     ],
@@ -48,4 +50,7 @@
         "terminal.ansiWhite":"#A5A2A2",
         "terminal.ansiYellow":"#FDED02"
     },
+    "python.dataScience.sendSelectionToInteractiveWindow": false,
+    "python.dataScience.alwaysTrustNotebooks": true,
+    "workbench.startupEditor": "newUntitledFile",
 }

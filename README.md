@@ -1,3 +1,11 @@
+## Default Project structure
+
+
+
+
+
+
+
 ## Python
 
 ### Linux - Python specific version
@@ -420,10 +428,10 @@ setuptools.setup(
 - default settings in 
 
   ```
-  C:\Users\<user>\AppData\Roaming\Code\User
+  C:\Users\<user>\AppData\Roaming\Code\User\settings.json
   ```
 
-- copy settings.json 
+- copy vscode_settings.json content
 
 ## Pentaho
 
