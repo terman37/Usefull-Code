@@ -31,56 +31,68 @@
         },
         "list":
         [
+            // STANDARD COMMAND LINE
             {
-                // cmd.exe
+                "name": "Cmd Line",
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
-                "name": "Invite de commandes",
+                "hidden": false,
                 "commandline": "cmd.exe",
-		        "startingDirectory" : "C:/MY_DATAS/",
-                "hidden": false
+                "startingDirectory" : "C:/MY_DATAS/",
+                "snapOnInput" : true,
+                "closeOnExit" : true,
+                "colorScheme": "One Half Dark",
+                "useAcrylic": true,
+                "acrylicOpacity": 0.8
             },
-	        {
-                // Python venv Lab37
-                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa9859}",
-                "name": "Lab37",
-		        "icon" : "C:/MY_SOFTS/DEV/PYTHON/Python377/DLLs/pyc.ico",
-                "commandline": "cmd.exe /K C:/MY_DATAS/MyGIT/venvs/Lab37/Scripts/Activate.bat",
-		        "startingDirectory" : "C:/MY_DATAS/",
-                "hidden": false
-            },
-    	    {
-    		    // Git BASH
-            	"guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa9858}",
-            	"acrylicOpacity" : 0.75,
-            	"closeOnExit" : true,
-            	"colorScheme" : "Campbell",
-           	 	"commandline" : "C:/MY_SOFTS/DEV/GIT/Git/bin/bash.exe -i -l",
-            	"cursorColor" : "#FFFFFF",
-            	"cursorShape" : "bar",
-            	"fontFace" : "Consolas",
-            	"fontSize" : 10,
-            	"historySize" : 9001,
-            	"icon" : "C:/MY_SOFTS/DEV/GIT/Git/mingw64/share/git/git-for-windows.ico",
-            	"name" : "GIT Bash",
-            	"padding" : "0, 0, 0, 0",
-            	"snapOnInput" : true,
-            	"startingDirectory" : "%USERPROFILE%",
-            	"useAcrylic" : true
-        	},
+            // COMMAND LINE WITH TEST PYTHON VENV
             {
-		        // WSL Ubuntu
+                "name": "Venv",
+                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa9859}",
+                "hidden": false,
+                "commandline": "cmd.exe /K C:/MY_DATAS/MyGIT/venvs/Lab37/Scripts/Activate.bat",
+                "startingDirectory" : "C:/MY_DATAS/",
+                "snapOnInput" : true,
+                "closeOnExit" : true,
+                "icon" : "C:/MY_SOFTS/DEV/PYTHON/Python377/DLLs/pyc.ico",
+                "colorScheme": "One Half Dark",
+                "useAcrylic": true,
+                "acrylicOpacity": 0.8
+            },
+            // WSL UBUNTU
+            {
+                "name": "Ubuntu",
                 "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
                 "hidden": false,
-                "name": "Ubuntu",
-                "source": "Windows.Terminal.Wsl"
+                "source": "Windows.Terminal.Wsl",
+                "snapOnInput" : true,
+                "closeOnExit" : true,
+                "colorScheme": "Ubuntu",
+                "useAcrylic" : false
             },
-    	    {
+            // GIT BASH
+            {
+                "name" : "GIT Bash",
+                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa9858}",
+                "hidden": false,
+                "commandline" : "C:/MY_SOFTS/DEV/GIT/Git/bin/bash.exe -i -l",
+                "startingDirectory" : "%USERPROFILE%",
+                "historySize" : 9001,
+                "snapOnInput" : true,
+                "closeOnExit" : true,
+                "icon" : "C:/MY_SOFTS/DEV/GIT/Git/mingw64/share/git/git-for-windows.ico",
+                "colorScheme" : "One Half Light",
+                "useAcrylic" : false
+            },
+        // HIDDEN PROFILES
+            // POWERSHELL
+            {
                 // Make changes here to the powershell.exe profile.
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
                 "name": "Windows PowerShell",
                 "commandline": "powershell.exe",
                 "hidden": true
             },
+            // AZURE CLOUD SHELL
             {
                 "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
                 "hidden": true,
@@ -92,7 +104,28 @@
 
     // Add custom color schemes to this array.
     // To learn more about color schemes, visit https://aka.ms/terminal-color-schemes
-    "schemes": [],
+    "schemes": [{
+        // Color Scheme: UbuntuLegit
+        "background":  "#2C001E",
+        "black":  "#4E9A06",
+        "blue":  "#3465A4",
+        "brightBlack":  "#555753",
+        "brightBlue":  "#729FCF",
+        "brightCyan":  "#34E2E2",
+        "brightGreen":  "#8AE234",
+        "brightPurple":  "#AD7FA8",
+        "brightRed":  "#EF2929",
+        "brightWhite":  "#EEEEEE",
+        "brightYellow":  "#FCE94F",
+        "cyan":  "#06989A",
+        "foreground":  "#EEEEEE",
+        "green":  "#300A24",
+        "name":  "Ubuntu",
+        "purple":  "#75507B",
+        "red":  "#CC0000",
+        "white":  "#D3D7CF",
+        "yellow":  "#C4A000"
+    }],
 
     // Add custom keybindings to this array.
     // To unbind a key combination from your defaults.json, set the command to "unbound".
