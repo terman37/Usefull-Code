@@ -2,6 +2,7 @@
     "terminal.integrated.shell.windows": "C:\\windows\\System32\\cmd.exe",
     "git.autofetch": true,
     "python.linting.flake8Enabled": true,
+    "python.linting.pylintEnabled": false,
     "python.linting.enabled": true,
     "python.linting.flake8Args": [
         "--max-line-length=120"
@@ -16,8 +17,8 @@
             "type": "python",
             "request": "launch",
             "program": "${file}",
-            "console": "integratedTerminal",
-            // "console": "externalTerminal",
+            // "console": "integratedTerminal",
+            "console": "externalTerminal",
             "env": {"LOG_LEVEL":"DEBUG",
                     "SERVER_ADDRESS":"0.0.0.0",
                     "SERVER_PORT":"8080",
@@ -53,4 +54,6 @@
         "terminal.ansiWhite":"#A5A2A2",
         "terminal.ansiYellow":"#FDED02"
     },
+    "git.confirmSync": false,
+    "kite.showWelcomeNotificationOnStartup": false,
 }
