@@ -27,3 +27,6 @@ logs
 ### Tests ###
 .pytest_cache
 .tox
+
+### Secrets ###
+secrets
