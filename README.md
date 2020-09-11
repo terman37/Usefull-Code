@@ -140,7 +140,7 @@ ssl_verify: false
 - pip
 
   ```
-  pip install jupyter-lab
+  pip install jupyterlab
   ```
 
 ### Kernel
