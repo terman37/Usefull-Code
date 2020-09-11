@@ -17,8 +17,8 @@
             "type": "python",
             "request": "launch",
             "program": "${file}",
-            // "console": "integratedTerminal",
-            "console": "externalTerminal",
+            "console": "integratedTerminal",
+            // "console": "externalTerminal",
             "env": {"LOG_LEVEL":"DEBUG",
                     "SERVER_ADDRESS":"0.0.0.0",
                     "SERVER_PORT":"8080",
@@ -55,5 +55,59 @@
         "terminal.ansiYellow":"#FDED02"
     },
     "git.confirmSync": false,
-    "kite.showWelcomeNotificationOnStartup": false,
+    "window.zoomLevel": 0,
+    // -TODO-TREE CONFIG
+    "todo-tree.tree.showScanModeButton": false,
+    "todo-tree.general.tags": [
+        "TOTEST",
+        "TODO",
+        "HACK",
+        "FIXME",
+        "BUG",
+        "DONE",
+        "LATER"
+    ],
+    "todo-tree.tree.hideIconsWhenGroupedByTag": true,
+    "todo-tree.highlights.defaultHighlight": {
+        "background": "black",
+        // "fontWeight":"bold"
+    },
+    "todo-tree.highlights.customHighlight": {
+        "TODO": {
+            "foreground": "yellow",
+            "icon": "check",
+            "iconColour": "yellow",
+            "type": "line"
+        },
+        "TOTEST": {
+            "foreground": "cyan",
+            "icon": "checklist",
+            "iconColour": "cyan",
+            "type": "line"
+        },
+        "DONE": {
+            "foreground": "green",
+            "icon": "thumbsup",
+            "iconColour": "green",
+            "type": "line"
+        },
+        "FIXME": {
+            "foreground": "red",
+            "icon": "alert",
+            "iconColour": "red",
+            "type": "line"
+        },
+        "LATER": {
+            "foreground": "grey",
+            "icon": "history",
+            "iconColour": "grey",
+            "type": "line"
+        }
+    },
+    "todo-tree.general.tagGroups": {
+        "FIXME": [
+            "FIXME",
+            "BUG"
+        ]
+    }
 }

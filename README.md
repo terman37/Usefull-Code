@@ -436,11 +436,12 @@ setuptools.setup(
 - Python (Microsoft)
 - Python Indent (Kevin Rose)
 - Python Docstring Generator (Nils Werner)
-- Better Comments (Aaron Bond)
 - Python Type Hint (njqdev)
 - Remote development: SSH, containers, WSL (Microsoft)
 - Docker (Microsoft)
 - Ressource monitor (Mutantdino)
+- Git History (Don Jayamanne)
+- Todo Tree (Gruntfuggly)
 
 ## Pentaho
 
