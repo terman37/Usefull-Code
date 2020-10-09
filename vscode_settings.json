@@ -77,31 +77,31 @@
             "foreground": "yellow",
             "icon": "check",
             "iconColour": "yellow",
-            "type": "line"
+            "type": "text-and-comment"
         },
         "TOTEST": {
             "foreground": "cyan",
             "icon": "checklist",
             "iconColour": "cyan",
-            "type": "line"
+            "type": "text-and-comment"
         },
         "DONE": {
             "foreground": "green",
             "icon": "thumbsup",
             "iconColour": "green",
-            "type": "line"
+            "type": "text-and-comment"
         },
         "FIXME": {
             "foreground": "red",
             "icon": "alert",
             "iconColour": "red",
-            "type": "line"
+            "type": "text-and-comment"
         },
         "LATER": {
             "foreground": "grey",
             "icon": "history",
             "iconColour": "grey",
-            "type": "line"
+            "type": "text-and-comment"
         }
     },
     "todo-tree.general.tagGroups": {
