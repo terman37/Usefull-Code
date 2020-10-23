@@ -431,6 +431,22 @@ setuptools.setup(
 
 - copy vscode_settings.json content
 
+
+
+.vscode/settings.json
+
+```
+{
+
+  "python.pythonPath": "_venv_flask\\Scripts\\python.exe",
+
+  "css.remoteStyleSheets": ["https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"]
+
+}
+```
+
+
+
 #### Extensions
 
 - Python (Microsoft)
@@ -442,6 +458,12 @@ setuptools.setup(
 - Ressource monitor (Mutantdino)
 - Git History (Don Jayamanne)
 - Todo Tree (Gruntfuggly)
+
+
+
+- HTML CSS Support
+- MagicPython
+- Trailing Spaces(Shardul Mahadik)
 
 ## Pentaho
 
