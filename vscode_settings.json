@@ -1,33 +1,63 @@
 {
     "terminal.integrated.shell.windows": "C:\\windows\\System32\\cmd.exe",
+    "terminal.external.windowsExec": "wt -p cmd cmd",
     "git.autofetch": true,
     "python.linting.flake8Enabled": true,
     "python.linting.pylintEnabled": false,
     "python.linting.enabled": true,
     "python.linting.flake8Args": [
-        "--max-line-length=120"
+        "--max-line-length=150"
     ],
     "python.globalModuleInstallation": true,
-    "python.dataScience.sendSelectionToInteractiveWindow": false,
-    "python.dataScience.alwaysTrustNotebooks": true,
     "launch": {
         "configurations": [
-        {
-            "name": "Python : Debug CGDM",
-            "type": "python",
-            "request": "launch",
-            "program": "${file}",
-            "console": "integratedTerminal",
-            // "console": "externalTerminal",
-            "env": {"LOG_LEVEL":"DEBUG",
-                    "SERVER_ADDRESS":"0.0.0.0",
-                    "SERVER_PORT":"8080",
-                    "HOSTNAME":"local",
-                    "VERSION_SERVER":"0.1",
-                    "CI_COVERAGE_ENABLED":"false"},
-            "cwd": "${workspaceFolder}/app"
-        }
-    ],
+            {
+                "name": "Py: Dbg from file folder",
+                "type": "python",
+                "request": "launch",
+                "program": "${file}",
+                "console": "integratedTerminal",
+                "env": {},
+                "cwd": "${fileDirname}"
+            },
+            {
+                "name": "Py: Dbg from App folder",
+                "type": "python",
+                "request": "launch",
+                "program": "${file}",
+                "console": "integratedTerminal",
+                "env": {},
+                "cwd": "${workspaceFolder}/app"
+            },
+            {
+                "name": "Py: Dbg from Docker",
+                "type": "python",
+                "request": "attach",
+                "connect": {
+                    "host": "localhost",
+                    "port": 10001
+                },
+                "pathMappings": [
+                    {
+                        "localRoot": "${workspaceFolder}/app",
+                        "remoteRoot": "/usr/app"
+                    }
+                ]
+            },
+            {
+                "name": "Python : Debug Flask",
+                "type": "python",
+                "request": "launch",
+                "program": "${workspaceFolder}/app/src/main.py",
+                "console": "integratedTerminal",
+                "env": {"MYSQL_USER":"terman37",
+                        "MYSQL_PASSWORD":"password",
+                        "MYSQL_DATABASE":"DB2020",
+                        "DB_SERVER":"127.0.0.1:3306",
+                        "BACKEND_SERVER":"http://10.0.1.93:9857"},
+                "cwd": "${workspaceFolder}"
+            }
+        ],
         "compounds": []
     },
     "workbench.statusBar.visible": true,
@@ -109,5 +139,7 @@
             "FIXME",
             "BUG"
         ]
-    }
+    },
+    "jupyter.sendSelectionToInteractiveWindow": false,
+    "jupyter.alwaysTrustNotebooks": true
 }
