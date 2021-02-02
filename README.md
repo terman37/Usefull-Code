@@ -505,3 +505,79 @@ sudo apt install default-jdk
 ### Windows terminal
 
 - modify **windows_terminal_settings.json** (check file with enabled cmd / cmd in venv / bash / wsl )
+
+## Install GPU for TF on Ubuntu 20.04
+
+### Install cuda drivers
+
+check drivers install and compatible GPU available
+
+```
+nvidia-smi
+```
+
+follow instructions from [here](https://developer.nvidia.com/cuda-downloads)
+
+check cuda version:
+
+```bash
+cat /usr/local/cuda/version.txt
+```
+
+check installed version of cuda toolkit
+
+```bash
+dpkg -l | grep cuda-toolkit
+```
+
+whereis cuda should return
+
+```
+cuda: /usr/lib/cuda /usr/include/cuda.h /usr/local/cuda
+```
+
+toolkit should be installed, check 
+
+```
+nvcc -V
+```
+
+### install cudnn
+
+download from [here](https://developer.nvidia.com/rdp/form/cudnn-download-survey)
+
+extract files
+
+copy to cuda folders:
+
+```bash
+sudo cp cuda/include/cudnn.h /usr/lib/cuda/include/
+sudo cp cuda/lib64/libcudnn* /usr/lib/cuda/lib64/
+```
+
+change permissions
+
+```bash
+sudo chmod a+r /usr/lib/cuda/include/cudnn.h /usr/lib/cuda/lib64/libcudnn*
+```
+
+add following lines to `~/.bashrc`
+
+```bash
+export LD_LIBRARY_PATH=/usr/lib/cuda/lib64:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/usr/lib/cuda/include:$LD_LIBRARY_PATH
+```
+
+reload bashrc
+
+```bash
+source ~/.bashrc
+```
+
+test in python interpreter
+
+```python
+import tensorflow as tf
+tf.config.list_physical_devices('GPU')
+```
+
