@@ -506,35 +506,68 @@ sudo apt install default-jdk
 
 - modify **windows_terminal_settings.json** (check file with enabled cmd / cmd in venv / bash / wsl )
 
-## Install GPU for TF on Ubuntu 20.04
+## Install GPU for TF on Ubuntu
 
-### Install cuda drivers
-
-check drivers install and compatible GPU available
+### Remove previous versions:
 
 ```
-nvidia-smi
+sudo apt-get --purge remove "*cublas*" "*cufft*" "*curand*" "*cusolver*" "*cusparse*" "*npp*" "*nvjpeg*" "cuda*" "nsight*" 
+sudo apt-get --purge remove "*nvidia*"
+sudo apt-get autoremove
 ```
 
-follow instructions from [here](https://developer.nvidia.com/cuda-downloads)
-
-check cuda version:
-
-```bash
-cat /usr/local/cuda/version.txt
-```
-
-check installed version of cuda toolkit
-
-```bash
-dpkg -l | grep cuda-toolkit
-```
-
-whereis cuda should return
+check if files remains in /usr/local/cuda* or /usr/lib/cuda*
 
 ```
-cuda: /usr/lib/cuda /usr/include/cuda.h /usr/local/cuda
+whereis cuda
 ```
+
+reboot
+
+```
+sudo reboot
+```
+
+
+
+### Check  if instructions available on TF website
+
+check for versions to install [here](https://www.tensorflow.org/install/gpu#linux_setup)
+
+### Install Cuda
+
+follow instructions [here](https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&target_distro=Ubuntu&target_version=2004&target_type=deblocal)
+
+
+
+follow Post installations steps [here](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#post-installation-actions)
+
+```
+export PATH=/usr/local/cuda-11.2/bin${PATH:+:${PATH}}
+export LD_LIBRARY_PATH=/usr/local/cuda-11.2/lib64 ${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+```
+
+or write directly in system wide env vars
+
+```
+sudo nano /etc/environment
+```
+
+
+
+### Install Cudnn
+
+follow instructions [here](https://developer.nvidia.com/rdp/cudnn-archive)
+
+-cuDNN Library for Linux (x86_64)
+
+
+
+
+
+
+
+
 
 toolkit should be installed, check 
 
