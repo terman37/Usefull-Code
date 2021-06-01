@@ -1,6 +1,6 @@
 ## Default Project structure
 
-check draw.io diagram
+check draw.io diagram 
 
 copy paste files and folder in template_project_folder
 
